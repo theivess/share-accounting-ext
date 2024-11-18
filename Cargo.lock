@@ -46,14 +46,12 @@ checksum = "d86b93f97252c47b41663388e6d155714a9d0c398b99f1005cbc5f978b29f445"
 [[package]]
 name = "binary_codec_sv2"
 version = "1.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8ad24342e0abdcc463ad6ad4ac7b0ec606122c11eddf92de186a657df0114eb7"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 
 [[package]]
 name = "binary_sv2"
 version = "1.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2bf97d3b10067e2bb0dbf95e047eafdcfb16130ed830b958be3b506c6a3dffe9"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_codec_sv2",
  "derive_codec_sv2",
@@ -69,15 +67,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0694ea59225b0c5f3cb405ff3f670e4828358ed26aec49dc352f730f0cb1a8a3"
 dependencies = [
  "bech32",
- "bitcoin_hashes 0.11.0",
+ "bitcoin_hashes",
  "secp256k1 0.24.3",
 ]
-
-[[package]]
-name = "bitcoin-internals"
-version = "0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9425c3bf7089c983facbae04de54513cce73b41c7f9ff8c845b54e7bc64ebbfb"
 
 [[package]]
 name = "bitcoin_hashes"
@@ -86,20 +78,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "90064b8dee6815a6470d60bad07bbbaee885c0e12d04177138fa3291a01b7bc4"
 
 [[package]]
-name = "bitcoin_hashes"
-version = "0.13.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1930a4dabfebb8d7d9992db18ebe3ae2876f0a305fab206fd168df931ede293b"
-dependencies = [
- "bitcoin-internals",
- "hex-conservative",
-]
-
-[[package]]
 name = "buffer_sv2"
 version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bd614def53be1a0b60af49472b204872a925caadcea0e4ad114540cccbf2b2c0"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "aes-gcm",
 ]
@@ -163,30 +144,16 @@ dependencies = [
 [[package]]
 name = "common_messages_sv2"
 version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e26ef5b589626babda1a4f816ba0b0baf21e05da34ccd92550cf4e8a7700430e"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_sv2",
- "const_sv2 2.0.0",
+ "const_sv2",
 ]
 
 [[package]]
 name = "const_sv2"
-version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "718587f3264788781f11bca6d621b65c94475cd01bd727b5195add1f00fa7bf7"
-dependencies = [
- "secp256k1 0.28.2",
-]
-
-[[package]]
-name = "const_sv2"
-version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c8c4b5c8250a221e1df35eb4e80c080a58a63466ed744f5ec3f28af78f203cce"
-dependencies = [
- "secp256k1 0.28.2",
-]
+version = "2.1.0"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 
 [[package]]
 name = "cpufeatures"
@@ -222,7 +189,7 @@ name = "demand-share-accounting-ext"
 version = "0.0.12"
 dependencies = [
  "binary_sv2",
- "const_sv2 2.0.0",
+ "const_sv2",
  "framing_sv2",
  "roles_logic_sv2",
  "serde",
@@ -231,8 +198,7 @@ dependencies = [
 [[package]]
 name = "derive_codec_sv2"
 version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9897bc3b876d6c3fa05ef5325d00017effcff2658453b55e41f28418ceee72f8"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_codec_sv2",
 ]
@@ -240,11 +206,10 @@ dependencies = [
 [[package]]
 name = "framing_sv2"
 version = "2.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "665489768dc07f11753d26b5501e371937893bc7c0cf14f0968a009d5d6cdf45"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_sv2",
- "const_sv2 2.0.0",
+ "const_sv2",
 ]
 
 [[package]]
@@ -279,12 +244,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hex-conservative"
-version = "0.1.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "212ab92002354b4819390025006c897e8140934349e8635c9b077f47b4dcbd20"
-
-[[package]]
 name = "inout"
 version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -296,11 +255,10 @@ dependencies = [
 [[package]]
 name = "job_declaration_sv2"
 version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c629ad9254659a961cb64af7dcf5bf1c02f8c95f9290eff395cfb066e99b056"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_sv2",
- "const_sv2 1.0.0",
+ "const_sv2",
 ]
 
 [[package]]
@@ -311,12 +269,11 @@ checksum = "374af5f94e54fa97cf75e945cce8a6b201e88a1a07e688b47dfd2a59c66dbd86"
 
 [[package]]
 name = "mining_sv2"
-version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6fa462cd226a1bc651074084bc3d17afc04e07787b3dbbb217b20ec7b79b04cc"
+version = "2.0.0"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_sv2",
- "const_sv2 1.0.0",
+ "const_sv2",
 ]
 
 [[package]]
@@ -425,14 +382,13 @@ dependencies = [
 
 [[package]]
 name = "roles_logic_sv2"
-version = "1.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d1244df1a452e972ce4b4d415b2a293eff0d6c815d652c6b436fb53d836f5356"
+version = "2.0.0"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_sv2",
  "chacha20poly1305",
  "common_messages_sv2",
- "const_sv2 2.0.0",
+ "const_sv2",
  "framing_sv2",
  "job_declaration_sv2",
  "mining_sv2",
@@ -449,7 +405,7 @@ version = "0.24.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6b1629c9c557ef9b293568b338dddfc8208c98a18c59d722a9d53f859d9c9b62"
 dependencies = [
- "bitcoin_hashes 0.11.0",
+ "bitcoin_hashes",
  "secp256k1-sys 0.6.1",
 ]
 
@@ -459,7 +415,6 @@ version = "0.28.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d24b59d129cdadea20aea4fb2352fa053712e5d713eee47d700cd4b2bc002f10"
 dependencies = [
- "bitcoin_hashes 0.13.0",
  "rand",
  "secp256k1-sys 0.9.2",
 ]
@@ -505,8 +460,7 @@ dependencies = [
 [[package]]
 name = "serde_sv2"
 version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "16b2815a25b9e533d9dc932a22d97ff0e986aee1838282100a43558b069f4446"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "buffer_sv2",
  "serde",
@@ -527,10 +481,10 @@ checksum = "56199f7ddabf13fe5074ce809e7d3f42b42ae711800501b5b16ea82ad029c39d"
 [[package]]
 name = "stratum-common"
 version = "1.0.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b2d62d4dc555b095d30d3815864d0ecd05a62377fb412933b90e83554a0b1cb6"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "bitcoin",
+ "secp256k1 0.28.2",
 ]
 
 [[package]]
@@ -553,11 +507,10 @@ dependencies = [
 [[package]]
 name = "template_distribution_sv2"
 version = "1.0.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9550ecdc06cacecd1752184ad973109048be40f188d78b8d8bf59840f363cd4e"
+source = "git+https://github.com/demand-open-source/stratum?branch=ImproveCoinbase#96c5a827e5a5fedda5d8817d9cc75baaa1450c07"
 dependencies = [
  "binary_sv2",
- "const_sv2 2.0.0",
+ "const_sv2",
 ]
 
 [[package]]
