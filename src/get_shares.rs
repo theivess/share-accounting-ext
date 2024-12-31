@@ -34,7 +34,7 @@ impl<'decoder> From<GetSharesSuccess<'decoder>> for EncodableField<'decoder> {
         Self::Struct(fields)
     }
 }
-impl<'decoder> GetSize for GetSharesSuccess<'decoder> {
+impl GetSize for GetSharesSuccess<'_> {
     fn get_size(&self) -> usize {
         let mut size = 0;
         size += self.shares.get_size();
@@ -60,7 +60,7 @@ impl<'decoder> Decodable<'decoder> for GetSharesSuccess<'decoder> {
         })
     }
 }
-impl<'decoder> GetSharesSuccess<'decoder> {
+impl GetSharesSuccess<'_> {
     pub fn into_static(self) -> GetSharesSuccess<'static> {
         let mut inner = vec![];
         let shares = self.shares.into_inner();
@@ -71,7 +71,7 @@ impl<'decoder> GetSharesSuccess<'decoder> {
         GetSharesSuccess { shares: seq }
     }
 }
-impl<'decoder> GetSharesSuccess<'decoder> {
+impl GetSharesSuccess<'_> {
     pub fn as_static(&self) -> GetSharesSuccess<'static> {
         self.clone().into_static()
     }

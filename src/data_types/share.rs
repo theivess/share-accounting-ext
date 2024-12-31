@@ -47,7 +47,7 @@ impl<'a> Share<'a> {
     }
 }
 
-impl<'d> GetMarker for Share<'d> {
+impl GetMarker for Share<'_> {
     fn get_marker() -> FieldMarker {
         let markers = vec![
             u32::get_marker(),
@@ -63,7 +63,7 @@ impl<'d> GetMarker for Share<'d> {
     }
 }
 
-impl<'d> GetSize for Share<'d> {
+impl GetSize for Share<'_> {
     fn get_size(&self) -> usize {
         self.nonce.get_size()
             + self.ntime.get_size()
@@ -76,7 +76,7 @@ impl<'d> GetSize for Share<'d> {
     }
 }
 
-impl<'d> binary_sv2::SizeHint for Share<'d> {
+impl binary_sv2::SizeHint for Share<'_> {
     // This is not needed
     fn size_hint(_: &[u8], _: usize) -> Result<usize, binary_sv2::Error> {
         todo!()
@@ -86,7 +86,7 @@ impl<'d> binary_sv2::SizeHint for Share<'d> {
     }
 }
 
-impl<'d> TryInto<binary_sv2::decodable::FieldMarker> for Share<'d> {
+impl TryInto<binary_sv2::decodable::FieldMarker> for Share<'_> {
     type Error = ();
     fn try_into(self) -> Result<binary_sv2::decodable::FieldMarker, Self::Error> {
         Ok(Share::get_marker())

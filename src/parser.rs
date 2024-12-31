@@ -46,7 +46,7 @@ pub enum ShareAccountingMessages<'a> {
     ErrorMessage(ErrorMessage<'a>),
 }
 
-impl<'a> IsSv2Message for ShareAccountingMessages<'a> {
+impl IsSv2Message for ShareAccountingMessages<'_> {
     fn message_type(&self) -> u8 {
         match self {
             Self::ShareOk(_) => MESSAGE_TYPE_SHARE_OK,
@@ -262,7 +262,7 @@ impl GetSize for PoolExtMessages<'_> {
     }
 }
 
-impl<'a> IsSv2Message for PoolExtMessages<'a> {
+impl IsSv2Message for PoolExtMessages<'_> {
     fn message_type(&self) -> u8 {
         match self {
             PoolExtMessages::Common(a) => a.message_type(),
@@ -347,7 +347,7 @@ impl<'a> TryFrom<PoolExtMessages<'a>> for MiningDeviceMessages<'a> {
     }
 }
 
-impl<'s> PoolExtMessages<'s> {
+impl PoolExtMessages<'_> {
     pub fn into_static(self) -> PoolExtMessages<'static> {
         match self {
             PoolExtMessages::Common(a) => match a {
@@ -382,12 +382,6 @@ impl<'s> PoolExtMessages<'s> {
                 ),
                 JobDeclaration::DeclareMiningJobSuccess(m) => PoolExtMessages::JobDeclaration(
                     JobDeclaration::DeclareMiningJobSuccess(m.into_static()),
-                ),
-                JobDeclaration::IdentifyTransactions(m) => PoolExtMessages::JobDeclaration(
-                    JobDeclaration::IdentifyTransactions(m.into_static()),
-                ),
-                JobDeclaration::IdentifyTransactionsSuccess(m) => PoolExtMessages::JobDeclaration(
-                    JobDeclaration::IdentifyTransactionsSuccess(m.into_static()),
                 ),
                 JobDeclaration::ProvideMissingTransactions(m) => PoolExtMessages::JobDeclaration(
                     JobDeclaration::ProvideMissingTransactions(m.into_static()),

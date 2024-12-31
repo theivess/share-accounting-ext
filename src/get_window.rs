@@ -32,7 +32,7 @@ impl<'decoder> From<GetWindowSuccess<'decoder>> for EncodableField<'decoder> {
         Self::Struct(fields)
     }
 }
-impl<'decoder> GetSize for GetWindowSuccess<'decoder> {
+impl GetSize for GetWindowSuccess<'_> {
     fn get_size(&self) -> usize {
         let mut size = 0;
         size += self.slices.get_size();

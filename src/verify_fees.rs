@@ -4,7 +4,7 @@ use alloc::vec::Vec;
 use binary_sv2::binary_codec_sv2;
 #[cfg(feature = "with_serde")]
 use binary_sv2::GetSize;
-use binary_sv2::{Deserialize, Seq064K, Serialize, ShortTxId, B016M, U256};
+use binary_sv2::{Deserialize, Seq064K, Serialize, B016M, U256};
 #[cfg(not(feature = "with_serde"))]
 use core::convert::TryInto;
 
@@ -28,10 +28,11 @@ pub struct GetTransationsInJobSuccess<'decoder> {
     pub request_id: u32,
     #[cfg_attr(feature = "with_serde", serde(borrow))]
     pub coinbase_id: U256<'decoder>,
-    pub tx_short_hash_nonce: u64,
-    #[cfg_attr(feature = "with_serde", serde(borrow))]
-    pub tx_short_hash_list: Seq064K<'decoder, ShortTxId<'decoder>>,
-    pub tx_hash_list_hash: U256<'decoder>,
+    // pub tx_short_hash_nonce: u64,
+    tx_list: Seq064K<'decoder, B016M<'decoder>>,
+    // #[cfg_attr(feature = "with_serde", serde(borrow))]
+    // pub tx_short_hash_list: Seq064K<'decoder, ShortTxId<'decoder>>,
+    // pub tx_hash_list_hash: U256<'decoder>,
 }
 #[cfg(feature = "with_serde")]
 impl<'d> GetSize for GetTransationsInJobSuccess<'d> {
