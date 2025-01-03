@@ -15,7 +15,6 @@ serde = { version = "1.0.89", default-features = false, optional= true }
 #framing_sv2 = "^2.0.0"
 roles_logic_sv2 = { git = "https://github.com/demand-open-source/stratum", branch = "ImproveCoinbase", subdirectory = "protocols/v2/roles-logic-sv2" }
 binary_sv2 = { git = "https://github.com/demand-open-source/stratum", branch = "ImproveCoinbase",subdirectory = "protocols/v2/binary_sv2" }
-const_sv2 = { git = "https://github.com/demand-open-source/stratum", branch = "ImproveCoinbase",subdirectory = "protocols/v2/const_sv2" }
 framing_sv2 = { git = "https://github.com/demand-open-source/stratum", branch = "ImproveCoinbase",subdirectory = "protocols/v2/framing_sv2" }
 
 #binary_sv2 = { version = "1.1.0", path = "../stratum/protocols/v2/binary-sv2/binary-sv2"}

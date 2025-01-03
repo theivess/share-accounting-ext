@@ -189,7 +189,6 @@ name = "demand-share-accounting-ext"
 version = "0.0.12"
 dependencies = [
  "binary_sv2",
- "const_sv2",
  "framing_sv2",
  "roles_logic_sv2",
  "serde",
