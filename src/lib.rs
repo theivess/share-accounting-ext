@@ -6,14 +6,14 @@ extern crate alloc;
 mod r#const;
 mod data_types;
 mod error_message;
-mod ext_negotiation;
+pub mod ext_negotiation;
 mod get_shares;
 mod get_window;
 mod new_block_found;
 mod new_txs;
 pub mod parser;
 mod share_ok;
-mod verification;
+pub mod verification;
 mod verify_fees;
 
 pub use crate::r#const::*;
