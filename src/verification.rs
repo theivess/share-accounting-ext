@@ -200,9 +200,15 @@ pub fn verify_share_in_slice(
         true
     };
 
+    let merkle_valid = if config.verify_all_merkle_paths {
+        merkle_valid && index_valid
+    } else {
+        true
+    };
+
     Ok(ShareVerificationResult {
         share_index: share.share_index,
-        merkle_valid: merkle_valid && index_valid,
+        merkle_valid,
         difficulty_valid,
         fees_valid,
         slice_inclusion_valid,
